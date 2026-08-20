@@ -1,0 +1,108 @@
+import type { RSVPConfig } from '../types/wedding'
+
+export const weddingConfig = {
+  couple: {
+    bride: 'Nour',
+    groom: 'Hassene',
+    displayName: 'NOUR × HASSENE',
+    monogram: 'N × H',
+  },
+  wedding: {
+    date: '2026-09-06',
+    time: '20:30',
+    timezone: 'Africa/Tunis',
+    targetIso: '2026-09-06T19:30:00.000Z',
+    endIso: '2026-09-07T02:00:00.000Z',
+    shortDate: '06 • 09 • 26',
+    longDate: 'Dimanche 6 Septembre 2026',
+  },
+  venue: {
+    name: 'Le Pavillon des Baies de Gammarth',
+    displayName: 'Le Pavillon des Baies',
+    city: 'Gammarth',
+    country: 'Tunisie',
+    location: 'Gammarth, Tunis Governorate, Tunisie',
+  },
+  invitationMessage: [
+    'Nous avons la joie de vous inviter à célébrer notre union.',
+    'Pour écrire avec vous une page lumineuse de notre histoire,',
+    'Où chaque sourire sera une étoile,',
+    'Où chaque regard échangé fera briller nos cœurs,',
+    'et où chaque danse fera vibrer nos âmes.',
+    'Venez partager ce moment précieux avec nous.',
+  ],
+  schedule: [
+    {
+      date: '2026-09-06',
+      time: '20:30',
+      title: 'Arrivée des mariés et signature du contrat de mariage',
+      venue: 'Le Pavillon des Baies de Gammarth',
+      description: "Laissez-vous porter par l’émotion de ce moment unique : les mariés font leur entrée, avant la signature du contrat de mariage.",
+      icon: 'signature',
+    },
+    {
+      date: '2026-09-06',
+      time: '21:00',
+      title: 'Soirée',
+      venue: 'Le Pavillon des Baies de Gammarth',
+      description: 'Place à la musique, aux retrouvailles, aux rires et à la danse pour célébrer ensemble ce jour si précieux.',
+      icon: 'dance',
+    },
+    {
+      date: '2026-09-07',
+      time: '00:00',
+      title: 'Échange des alliances et photos de famille',
+      venue: 'Le Pavillon des Baies de Gammarth',
+      description: 'La nuit continue autour d’un instant symbolique, intime et lumineux.',
+      icon: 'rings',
+    },
+  ],
+  faq: [
+    ['Quelle est la date limite pour répondre ?', 'Pas d’urgence, votre présence nous réjouira à tout moment.'],
+    ['Puis-je venir accompagné·e ?', 'Votre +1 est le bienvenu !'],
+    ['Où puis-je me garer ?', 'Des places de parking sont réservées pour nos invités directement au Pavillon.'],
+    ['Que dois-je porter ?', 'Ce vêtement qui fait pétiller votre âme.'],
+    ['Le mariage aura-t-il lieu en intérieur ou en extérieur ?', 'La cérémonie aura lieu principalement à l’intérieur.'],
+    ['Pouvons-nous prendre des photos pendant le mariage ?', 'Oui ! On adorerait que vous gardiez un souvenir de notre union ❤️'],
+    ['Qui contacter si j’ai des questions ?', 'N’hésitez pas à nous contacter au +216 55 370 423.'],
+  ] as const,
+  rsvp: {
+    enabled: true,
+    deadline: null,
+    maxGuests: 2,
+    fields: {
+      name: true,
+      attendance: true,
+      guests: true,
+      companionName: true,
+      phone: true,
+      email: false,
+      dietaryRestrictions: true,
+      menuChoice: false,
+      transport: true,
+      accommodation: false,
+      songRequest: false,
+      message: true,
+    },
+    menuChoices: [],
+    customQuestions: [
+      { id: 'transport', label: 'Avez-vous besoin d’un transport ?', type: 'radio', options: ['Oui', 'Non'] },
+    ],
+  } satisfies RSVPConfig,
+  contact: { phone: '+21655370423', displayPhone: '+216 55 370 423' },
+  links: {
+    maps: 'https://www.google.com/maps/search/?api=1&query=Le+Pavillon+des+Baies+de+Gammarth',
+    stay: 'https://withjoy.com/nour-et-hassene-sept-2026/book-your-stay',
+  },
+  assets: {
+    couple: '/media/couple-hero-fhd.webp',
+    coupleSmall: '/media/couple-hero-fhd.webp',
+    storyCouple: '/media/couple-letter-celebration.jpeg',
+    countdown: '/media/couple-countdown-fhd.webp',
+    venue: '/media/venue-fhd.webp',
+    closingMonogram: '/media/closing-monogram.png?v=20260820-165720',
+  },
+  motion: { fast: 0.35, normal: 0.7, slow: 1.1, cinematic: 1.6 },
+} as const
+
+export type WeddingConfig = typeof weddingConfig
