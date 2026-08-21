@@ -43,14 +43,14 @@ export const weddingConfig = {
     {
       date: '2026-09-06',
       time: '21:00',
-      title: 'Soirée',
+      title: 'Soirée mariage',
       venue: 'Le Pavillon des Baies de Gammarth',
       description: 'Place à la musique, aux retrouvailles, aux rires et à la danse pour célébrer ensemble ce jour si précieux.',
       icon: 'dance',
     },
     {
-      date: '2026-09-07',
-      time: '00:00',
+      date: '2026-09-06',
+      time: '23:45',
       title: 'Échange des alliances et photos de famille',
       venue: 'Le Pavillon des Baies de Gammarth',
       description: 'La nuit continue autour d’un instant symbolique, intime et lumineux.',
@@ -97,8 +97,8 @@ export const weddingConfig = {
   assets: {
     couple: '/media/couple-hero-fhd.webp',
     coupleSmall: '/media/couple-hero-fhd.webp',
-    storyCouple: '/media/couple-letter-celebration.jpeg',
-    countdown: '/media/couple-countdown-fhd.webp',
+    storyArtwork: '/media/story-hands-art.png',
+    countdown: '/media/countdown-bouquet-fhd.jpg',
     venue: '/media/venue-fhd.webp',
     closingMonogram: '/media/closing-monogram.png?v=20260820-165720',
   },

@@ -3,7 +3,7 @@ import { Reveal } from '../../components/ui/Reveal'
 import { weddingConfig } from '../../config/wedding.config'
 import { getGoogleCalendarUrl } from '../../lib/calendar'
 
-export function Venue() {
+export function Venue({ onOpenRsvp }: { onOpenRsvp: () => void }) {
   const { venue, assets, links } = weddingConfig
   return (
     <section className="venue" aria-labelledby="venue-title">
@@ -17,6 +17,7 @@ export function Venue() {
       <nav className="utility-links" aria-label="Informations pratiques">
         <a href={links.maps} target="_blank" rel="noreferrer"><span>Voir l’itinéraire</span><ArrowIcon /></a>
         <a href={getGoogleCalendarUrl()} target="_blank" rel="noreferrer"><span>Google Calendar</span><ArrowIcon /></a>
+        <button type="button" onClick={onOpenRsvp}><span>Confirmation d’invitation</span><ArrowIcon /></button>
       </nav>
     </section>
   )

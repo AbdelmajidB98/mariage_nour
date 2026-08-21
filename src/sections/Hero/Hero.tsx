@@ -11,6 +11,7 @@ export function Hero() {
       <div className="hero__copy">
         <h1 id="hero-title">{couple.displayName}</h1>
         <p>{wedding.longDate}</p>
+        <p>{venue.displayName}</p>
         <p>{venue.city}</p>
       </div>
       <a className="hero__scroll" href="#save-date" aria-label="Découvrir l’invitation"><span />Défiler</a>
