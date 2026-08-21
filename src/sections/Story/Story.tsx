@@ -17,17 +17,21 @@ function SaveTheDate() {
 function InvitationLetter() {
   const { assets } = weddingConfig
   return (
-    <section className="letter" aria-labelledby="letter-title">
-      <div className="letter__image-wrap">
-        <img src={assets.storyCouple} alt="Nour et Hassene dans un décor de boules à facettes" width="756" height="1555" loading="lazy" />
+    <section className="letter" id="story" aria-labelledby="letter-title">
+      <div className="letter__art" aria-hidden="true">
+        <img src={assets.storyArtwork} alt="" width="1024" height="1536" loading="lazy" />
       </div>
       <div className="letter__copy">
-        <h2 id="letter-title">
-          <Reveal><span>Pour écrire</span></Reveal>
-          <Reveal delay={0.08}><span><em>avec vous</em></span></Reveal>
-        </h2>
+        <Reveal>
+          <h2 id="letter-title">
+            <span>Pour</span>
+            <span>écrire</span>
+            <em>avec vous</em>
+          </h2>
+          <span className="letter__flourish" aria-hidden="true" />
+        </Reveal>
         <div className="letter__verses">
-          <Reveal>
+          <Reveal className="letter__poem-wrap">
             <p className="letter__poem">
               <span>une page lumineuse</span>
               <span>de notre histoire</span>
@@ -35,7 +39,10 @@ function InvitationLetter() {
               <span>sera une étoile</span>
             </p>
           </Reveal>
-          <Reveal delay={0.08}><p className="letter__invitation">Venez partager ce moment précieux avec nous.</p></Reveal>
+          <Reveal delay={0.08} className="letter__invitation-wrap">
+            <span className="letter__ornament" aria-hidden="true" />
+            <p className="letter__invitation">Venez partager ce moment précieux avec nous.</p>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -62,7 +69,7 @@ function Countdown() {
     ] as const
   return (
     <section className="countdown" aria-labelledby="countdown-title">
-      <img className="countdown__image" src={weddingConfig.assets.countdown} alt="" width="1080" height="1920" loading="lazy" />
+      <img className="countdown__image" src={weddingConfig.assets.countdown} alt="" width="1440" height="1964" loading="lazy" />
       <div className="countdown__content">
         <p>Plus que</p>
         <h2 id="countdown-title"><span>Avant notre</span><em>grand jour</em></h2>

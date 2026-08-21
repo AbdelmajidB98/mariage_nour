@@ -4,7 +4,7 @@ import { FAQ } from '../sections/FAQ/FAQ'
 
 const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
-export function SiteHeader() {
+export function SiteHeader({ onOpenRsvp }: { onOpenRsvp: () => void }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
@@ -49,6 +49,11 @@ export function SiteHeader() {
     document.getElementById('menu-questions')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
+  const showConfirmation = () => {
+    setMenuOpen(false)
+    onOpenRsvp()
+  }
+
   return (
     <>
       <header className="site-header">
@@ -63,7 +68,7 @@ export function SiteHeader() {
           >
             Menu
           </button>
-          <a className="site-header__rsvp" href="#rsvp">Répondre</a>
+          <button className="site-header__rsvp" type="button" onClick={onOpenRsvp}>Répondre</button>
         </div>
       </header>
 
@@ -85,12 +90,16 @@ export function SiteHeader() {
             </header>
 
             <nav className="navigation-drawer__nav" aria-label="Menu de l’invitation">
-              <a href="#programme" onClick={() => setMenuOpen(false)}>
+              <button type="button" onClick={showConfirmation}>
                 <span>01</span>
+                <strong>Confirmation <em>d’invitation</em></strong>
+              </button>
+              <a href="#programme" onClick={() => setMenuOpen(false)}>
+                <span>02</span>
                 <strong>Programme <em>de la soirée</em></strong>
               </a>
               <button type="button" onClick={showQuestions}>
-                <span>02</span>
+                <span>03</span>
                 <strong>Questions <em>&amp; Réponses</em></strong>
               </button>
             </nav>

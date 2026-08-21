@@ -5,7 +5,6 @@ export type CustomQuestion = {
   required?: boolean
   options?: string[]
 }
-
 export type RSVPConfig = {
   enabled: boolean
   deadline: string | null
@@ -27,5 +26,5 @@ export type RSVPValues = {
   dietaryRestrictions?: string
   message?: string
   transport?: string
-  customAnswers?: Record<string, string | string[] | number | boolean>
+  customAnswers?: Record<string, string | string[] | number | boolean | null | undefined>
 }
